@@ -69,6 +69,9 @@ def view_game(game_id):
     game = game_manager.get_object(game_id)
     if game is None:
         return does_not_exist_response("Game")
+    game_status = game.get_status()
+    if game_status == ApiChessGame.Status.WAITING_FOR_PLAYERS:
+        return success_response(data={"game_status": game_status})
     return success_response(
         data={
             "board": game.get_api_board.as_json(),
