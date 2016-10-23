@@ -1,4 +1,4 @@
 from flask import Flask
 app = Flask(__name__, template_folder='views')
 
-from .controllers.base import *
+from .controllers.api import *
