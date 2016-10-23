@@ -9,11 +9,6 @@ game_manager = ApiObjectManager(ApiChessGame)
 physical_board_manager = ApiObjectManager(ApiPhysicalBoard)
 
 
-@app.route('/')
-def hello():
-    return render_template('hello.html', name="noname")
-
-
 @app.route('/register/web_player', methods=['GET'])
 def register_player():
     player_id = player_manager.add_new_object()

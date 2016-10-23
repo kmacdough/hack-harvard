@@ -1,4 +1,8 @@
-from . import ApiBoard
+import threading
+
+from .api_board import ApiBoard
+from .api_external_chess_player import ApiExternalChessPlayer
+from ..core import ChessGame
 
 MAX_PLAYERS = 2
 
@@ -18,7 +22,19 @@ class ApiChessGame(object):
         return True
 
     def try_start_game(self):
-        pass
+        if len(self._players) == MAX_PLAYERS and \
+            all(player.status == ApiExternalChessPlayer.Status.STARTING_GAME
+                for player in self._players):
+            self._game = ChessGame(self._players[0], self._players[1])
+            self.run_game_in_separate_thread()
+
+    def run_game_in_separate_thread(self):
+        def start_game():
+            self._game.run_game()
+
+        thread = threading.Thread(target=start_game)
+        thread.daemon = True
+        thread.start()
 
     def get_status(self):
         return self._status

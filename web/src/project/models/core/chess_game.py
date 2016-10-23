@@ -16,8 +16,8 @@ class ChessGame(object):
         :type ChessPlayer
         """
         self.board = chess.Board()
-        self.white_player = white_player
-        self.black_player = black_player
+        self.white_player = ChessPlayer(white_player)
+        self.black_player = ChessPlayer(black_player)
         self.play_order = [white_player, black_player]
 
     def run_game(self):

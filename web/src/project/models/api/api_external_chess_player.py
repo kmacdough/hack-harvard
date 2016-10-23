@@ -1,7 +1,7 @@
 import chess
 import time
 
-from . import ApiBoard
+from .api_board import ApiBoard
 from ..core import ExternalChessPlayer
 
 MOVE_CHECK_SLEEP_SEC = 1.0
