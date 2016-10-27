@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<title>Chess</title>
+	<link rel="stylesheet" href="./styles.css">
+	<link rel="stylesheet" href="../static/css/bootstrap.min.css">
+</head>
+
+<body>
+<!-- Button -->
+    <div class="container">
+        <div class="row">
+          <label class="col-md-4 control-label" for="create_game"></label>
+          <div class="col-md-4">
+            <button id="create_game" name="create_game" onclick="createGame();" class="btn btn-primary">Create Game</button>
+          </div>
+        </div>
+
+        <!-- Button -->
+        <div class="row">
+          <label class="col-md-4 control-label" for="create_web_player"></label>
+          <div class="col-md-4">
+            <button id="create_web_player" name="create_web_player" onclick="createWebPlayer()" class="btn btn-primary">Create Web Player</button>
+          </div>
+        </div>
+
+        <!-- Text input-->
+        <div class="row">
+          <label class="col-md-4 control-label" for="player_id">Player ID</label>
+          <div class="col-md-4">
+          <input id="player_id" name="player_id" type="text" placeholder="placeholder" class="form-control input-md">
+
+          </div>
+        </div>
+
+        <!-- Text input-->
+        <div class="row">
+          <label class="col-md-4 control-label" for="game_id">Game ID</label>
+          <div class="col-md-4">
+          <input id="game_id" name="game_id" type="text" placeholder="placeholder" class="form-control input-md">
+
+          </div>
+        </div>
+
+        <!-- Text input-->
+        <div class="row">
+          <label class="col-md-4 control-label" for="board_id">Board ID</label>
+          <div class="col-md-4">
+          <input id="board_id" name="board_id" type="text" placeholder="placeholder" class="form-control input-md">
+
+          </div>
+        </div>
+
+        <!-- Button -->
+        <div class="row">
+          <label class="col-md-4 control-label" for="register_board"></label>
+          <div class="col-md-4">
+            <button id="register_board" name="register_board" onclick="registerBoard();" class="btn btn-primary">Register Board</button>
+          </div>
+        </div>
+
+        <!-- Button -->
+        <div class="row">
+          <label class="col-md-4 control-label" for="create_board_player"></label>
+          <div class="col-md-4">
+            <button id="create_board_player" name="create_board_player" onclick="createBoardPlayer();" class="btn btn-primary">Create Board Player</button>
+          </div>
+        </div>
+
+        <!-- Button -->
+        <div class="row">
+          <label class="col-md-4 control-label" for="add_player"></label>
+          <div class="col-md-4">
+            <button id="add_player" name="add_player" onclick="addPlayer();" class="btn btn-primary">Add Player to Game</button>
+          </div>
+        </div>
+    </div>
+</body>
+</html>
